@@ -1371,10 +1371,17 @@ void vtkCommandLineModuleLogic::ApplyTask(void *clientdata)
           if (tagend != std::string::npos)
             {
             tagstart = stdoutbuffer.rfind("<filter-progress>");
-            if (tagstart != std::string::npos)
+/*            if (tagstart != std::string::npos)
               {
               std::string progressString(stdoutbuffer, tagstart+17,
-                                         tagend-tagstart-17);
+                                         tagend-tagstart-17); */
+
+//Jim's suggestion
+
+  if (tagstart != std::string::npos && tagstart < tagend)
+{
+std::string progressString(stdoutbuffer, tagstart+17, tagend-tagstart-17);
+
               node0->GetModuleDescription().GetProcessInformation()->Progress = atof(progressString.c_str());
               foundTag = true;
               }
@@ -1384,10 +1391,16 @@ void vtkCommandLineModuleLogic::ApplyTask(void *clientdata)
           if (tagend != std::string::npos)
             {
             tagstart = stdoutbuffer.rfind("<filter-stage-progress>");
-            if (tagstart != std::string::npos)
+/*            if (tagstart != std::string::npos)
               {
               std::string progressString(stdoutbuffer, tagstart+23,
-                                         tagend-tagstart-23);
+                                         tagend-tagstart-23); */
+//  jim's suggestion
+
+if (tagstart != std::string::npos && tagstart < tagend)
+{
+std::string progressString(stdoutbuffer, tagstart+23, tagend-tagstart-23);
+
               node0->GetModuleDescription().GetProcessInformation()->StageProgress = atof(progressString.c_str());
               foundTag = true;
               }
@@ -1398,24 +1411,40 @@ void vtkCommandLineModuleLogic::ApplyTask(void *clientdata)
           if (tagend != std::string::npos)
             {
             tagstart = stdoutbuffer.rfind("<filter-name>");
-            if (tagstart != std::string::npos)
+/*            if (tagstart != std::string::npos)
               {
               std::string filterString(stdoutbuffer, tagstart+13,
-                                       tagend-tagstart-13);
+                                       tagend-tagstart-13); */
+
+
+//Jim`s fix
+
+            if (tagstart != std::string::npos && tagstart < tagend)
+{
+std::string filterString(stdoutbuffer, tagstart+13, tagend-tagstart-13);
+
               strncpy(node0->GetModuleDescription().GetProcessInformation()->ProgressMessage, filterString.c_str(), 1023);
               foundTag = true;
               }
             }
-          
+         
           // search for the last occurence of </filter-comment>
           tagend = stdoutbuffer.rfind("</filter-comment>");
           if (tagend != std::string::npos)
             {
             tagstart = stdoutbuffer.rfind("<filter-comment>");
-            if (tagstart != std::string::npos)
+/*            if (tagstart != std::string::npos)
               {
               std::string progressMessage(stdoutbuffer, tagstart+16,
-                                         tagend-tagstart-16);
+                                         tagend-tagstart-16); */
+
+   //Jim`s fix
+
+              if (tagstart != std::string::npos && tagstart < tagend)
+{
+std::string progressMessage(stdoutbuffer, tagstart+16, tagend-tagstart-16);
+
+
               strncpy (node0->GetModuleDescription().GetProcessInformation()->ProgressMessage, progressMessage.c_str(), 1023);
               foundTag = true;
               }
@@ -2023,3 +2052,4 @@ vtkCommandLineModuleLogic::FindHiddenNodeID(const ModuleDescription& d,
 
   return id;
 }
+

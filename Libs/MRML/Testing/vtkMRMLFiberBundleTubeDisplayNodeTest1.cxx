@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLFiberBundleTubeDisplayNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLFiberBundleTubeDisplayNode > node1 = vtkSmartPointer< vtkMRMLFiberBundleTubeDisplayNode >::New();
-
+   typedef vtkMRMLFiberBundleTubeDisplayNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

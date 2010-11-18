@@ -78,8 +78,8 @@ proc Usage { {msg ""} } {
     set msg "$msg\n   optional space separated list of packages to build (lower case)"
     set msg "$msg\n   -32 : does a 32 bit build of Slicer and all the libs (Default: isainfo -b on Solaris, 32 bit on other OS'es)"
     set msg "$msg\n   -64 : does a 64 bit build of Slicer and all the libs"
-    set msg "$msg\n   --suncc : builds Slicer with Sun's compilers (The default is gcc)"
-    set msg "$msg\n   --gcc : builds Slicer with GNU compilers"
+    set msg "$msg\n   --suncc : builds Slicer with Sun's compilers (The default on Solaris)"
+    set msg "$msg\n   --gcc : builds Slicer with GNU compilers (The default on other applicable platforms)"
     puts stderr $msg
 }
 
@@ -350,6 +350,11 @@ if { [BuildThis $::CMAKE "cmake"] == 1 } {
 
         if {$::GENLIB(buildit)} {
           cd $::CMAKE_PATH
+            if {$isSolaris} {
+              set ::env(CXXFLAGS) ""
+              set ::env(CFLAGS) ""
+              set ::env(LDFLAGS) ""
+            }
           runcmd $Slicer3_LIB/CMake/bootstrap
           eval runcmd $::MAKE
        }
@@ -526,8 +531,8 @@ if { [BuildThis $::BLT_TEST_FILE "blt"] == 1 } {
 
 
     if { $::TCL_VERSION == "tcl85" } {
-      runcmd $::CVS -d:pserver:anonymous:@blt.cvs.sourceforge.net:/cvsroot/blt login
-      runcmd $::CVS -z3 -d:pserver:anonymous@blt.cvs.sourceforge.net:/cvsroot/blt co -r HEAD blt
+#      runcmd $::CVS -d:pserver:anonymous:@blt.cvs.sourceforge.net:/cvsroot/blt login
+#      runcmd $::CVS -z3 -d:pserver:anonymous@blt.cvs.sourceforge.net:/cvsroot/blt co -r HEAD blt
     } else {
       runcmd  $::SVN co http://svn.slicer.org/Slicer3-lib-mirrors/trunk/$::TCL_VERSION/blt blt
       runcmd  $::SVN co http://svn.slicer.org/Slicer3-lib-mirrors/trunk/tcl/blt blt
@@ -587,9 +592,9 @@ if { [BuildThis $::BLT_TEST_FILE "blt"] == 1 } {
               }
           }
               
-          eval runcmd ./configure --with-tcl=$Slicer3_LIB/tcl/tcl/unix --with-tk=$Slicer3_LIB/tcl-build --prefix=$Slicer3_LIB/tcl-build --enable-shared $EXTRAS10LIBS $MYSQLDIR
-          eval runcmd $::SERIAL_MAKE
-          eval runcmd $::SERIAL_MAKE install
+#          eval runcmd ./configure --with-tcl=$Slicer3_LIB/tcl/tcl/unix --with-tk=$Slicer3_LIB/tcl-build --prefix=$Slicer3_LIB/tcl-build --enable-shared $EXTRAS10LIBS $MYSQLDIR
+#          eval runcmd $::SERIAL_MAKE
+#          eval runcmd $::SERIAL_MAKE install
 
         } else {
 
@@ -956,6 +961,12 @@ if { [BuildThis $::VTK_TEST_FILE "vtk"] == 1 } {
             $USE_VTK_ANSI_STDLIB \
             ../VTK
       } elseif { $isSolaris && $::GENLIB(bitness) == "64" } {
+      } elseif { $isSolaris && $::env(Slicer3_BITNESS) == "64" } {
+
+  puts "CFLAGS:  $::env(CFLAGS) \n \
+       CXXFLAGS: $::env(CXXFLAGS) \n \
+       LDFLAGS: $::env(LDFLAGS)"
+
         runcmd $::CMAKE \
             -G$GENERATOR \
             -DCMAKE_BUILD_TYPE:STRING=$::VTK_BUILD_TYPE \
@@ -1069,6 +1080,7 @@ if { [BuildThis $::KWWidgets_TEST_FILE "kwwidgets"] == 1 } {
         -DKWWidgets_BUILD_EXAMPLES:BOOL=OFF \
         -DBUILD_TESTING:BOOL=OFF \
         -DKWWidgets_BUILD_TESTING:BOOL=OFF \
+        -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
         -DCMAKE_BUILD_TYPE:STRING=$::VTK_BUILD_TYPE \
         ../KWWidgets
 
@@ -1140,6 +1152,7 @@ if { [BuildThis $::ITK_TEST_FILE "itk"] == 1 } {
           -DBUILD_EXAMPLES:BOOL=OFF \
           -DBUILD_TESTING:BOOL=OFF \
           -DCMAKE_BUILD_TYPE:STRING=$::VTK_BUILD_TYPE \
+          -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
           -DITK_LEGACY_REMOVE:BOOL=ON \
           ../Insight
       }
@@ -1230,7 +1243,7 @@ if { [BuildThis $::Teem_TEST_FILE "teem"] == 1 } {
     runcmd $::CMAKE \
       -G$GENERATOR \
       -DCMAKE_BUILD_TYPE:STRING=$::VTK_BUILD_TYPE \
-      -DCMAKE_VERBOSE_MAKEFILE:BOOL=OFF \
+      -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
       -DCMAKE_CXX_COMPILER:STRING=$COMPILER_PATH/$COMPILER \
       -DCMAKE_CXX_COMPILER_FULLPATH:FILEPATH=$COMPILER_PATH/$COMPILER \
       $C_FLAGS \
@@ -1298,6 +1311,7 @@ if { [BuildThis $::OPENIGTLINK_TEST_FILE "openigtlink"] == 1 && [string tolower 
             -DCMAKE_SKIP_RPATH:BOOL=ON \
             -DOpenIGTLink_DIR:FILEPATH=$Slicer3_LIB/OpenIGTLink-build \
             -DCMAKE_BUILD_TYPE:STRING=$::VTK_BUILD_TYPE \
+          -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
             ../OpenIGTLink
       }
 
@@ -1340,7 +1354,7 @@ if { ![file exists $::BatchMake_TEST_FILE] || $::GENLIB(update) } {
     runcmd $::CMAKE \
         -G$GENERATOR \
         -DCMAKE_BUILD_TYPE:STRING=$::VTK_BUILD_TYPE \
-        -DCMAKE_VERBOSE_MAKEFILE:BOOL=OFF \
+        -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
         -DCMAKE_CXX_COMPILER:STRING=$COMPILER_PATH/$COMPILER \
         -DCMAKE_CXX_COMPILER_FULLPATH:FILEPATH=$COMPILER_PATH/$COMPILER \
         -DBUILD_SHARED_LIBS:BOOL=OFF \
@@ -1432,7 +1446,7 @@ if {$isSolaris} {
       runcmd $::CMAKE \
         -G$GENERATOR \
         -DCMAKE_BUILD_TYPE:STRING=$::VTK_BUILD_TYPE \
-        -DCMAKE_VERBOSE_MAKEFILE:BOOL=OFF \
+        -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
         -DCMAKE_CXX_COMPILER:STRING=$COMPILER_PATH/$COMPILER \
         -DCMAKE_CXX_COMPILER_FULLPATH:FILEPATH=$COMPILER_PATH/$COMPILER \
         -DBUILD_SHARED_LIBS:BOOL=ON \

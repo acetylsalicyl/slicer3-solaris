@@ -16,6 +16,7 @@
 #include "vtkImageData.h"
 #include "vtkImageMathematics.h"
 #include <assert.h>
+# include <math.h>
 
 //------------------------------------------------------------------------------
 vtkImageMeanIntensityNormalization* vtkImageMeanIntensityNormalization::New()

@@ -23,6 +23,7 @@
 #include "vtkKWSimpleEntryDialog.h"
 
 #include "vtkSlicerFiducialsGUI.h"
+#include <math.h>
 
 //---------------------------------------------------------------------------
 vtkStandardNewMacro (vtkSlicerFiducialsGUI );

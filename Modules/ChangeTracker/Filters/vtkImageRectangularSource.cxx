@@ -2,6 +2,7 @@
 #include "vtkObjectFactory.h"
 #include "assert.h"
 #include "vtkImageData.h"
+#include <math.h>
 
 vtkCxxRevisionMacro(vtkImageRectangularSource, "$Revision: 1.7 $");
 vtkStandardNewMacro(vtkImageRectangularSource);

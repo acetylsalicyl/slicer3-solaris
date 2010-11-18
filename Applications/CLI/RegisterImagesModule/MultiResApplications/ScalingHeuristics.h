@@ -19,6 +19,7 @@
 
 #include <itkImageBase.h>
 #include <itkVector.h>
+#include <math.h>
 
 // The goal of this is to set the scale of each parameter
 // to a value such that a change in that parameter of 1.0

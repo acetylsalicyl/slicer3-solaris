@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLSelectionNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLSelectionNode > node1 = vtkSmartPointer< vtkMRMLSelectionNode >::New();
-
+typedef vtkMRMLSelectionNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

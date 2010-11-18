@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLTimeSeriesVolumeNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLTimeSeriesVolumeNode > node1 = vtkSmartPointer< vtkMRMLTimeSeriesVolumeNode >::New();
-
+   typedef vtkMRMLTimeSeriesVolumeNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

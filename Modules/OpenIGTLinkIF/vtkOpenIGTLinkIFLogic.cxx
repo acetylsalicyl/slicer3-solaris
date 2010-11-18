@@ -35,6 +35,7 @@
 
 #include "vtkMRMLIGTLConnectorNode.h"
 #include "vtkIGTLCircularBuffer.h"
+#include <math.h>
 
 vtkCxxRevisionMacro(vtkOpenIGTLinkIFLogic, "$Revision$");
 vtkStandardNewMacro(vtkOpenIGTLinkIFLogic);

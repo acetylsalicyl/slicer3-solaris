@@ -14,6 +14,8 @@
 #include "vtkMRMLStorageNode.h"
 #include "vtkURIHandler.h"
 #include <vtksys/stl/string>
+#include <math.h>
+
 //---------------------------------------------------------------------------
 vtkCxxRevisionMacro ( vtkSlicerCacheAndDataIOManagerGUI, "$Revision$");
 vtkStandardNewMacro (vtkSlicerCacheAndDataIOManagerGUI );

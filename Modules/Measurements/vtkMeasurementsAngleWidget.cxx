@@ -32,6 +32,7 @@
 
 #include "vtkMRMLTransformNode.h"
 #include "vtkMRMLLinearTransformNode.h"
+#include <math.h>
 
 class vtkMeasurementsAngleWidgetCallback : public vtkCommand
 {

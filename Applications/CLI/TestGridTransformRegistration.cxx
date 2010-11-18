@@ -40,6 +40,7 @@
 
 #include "itkTimeProbesCollectorBase.h"
 
+#include <math.h>
 #include <algorithm>
 
 // Use an anonymous namespace to keep class types and function names

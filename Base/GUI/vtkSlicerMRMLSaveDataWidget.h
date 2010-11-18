@@ -83,7 +83,7 @@ public:
     //BTX
   enum
     {
-      DataSavedEvent = 69010,
+      DataSavedEvent = 69010
     };
 //ETX
 

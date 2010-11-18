@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLVolumeArchetypeStorageNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLVolumeArchetypeStorageNode > node1 = vtkSmartPointer< vtkMRMLVolumeArchetypeStorageNode >::New();
-
+   typedef vtkMRMLVolumeArchetypeStorageNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

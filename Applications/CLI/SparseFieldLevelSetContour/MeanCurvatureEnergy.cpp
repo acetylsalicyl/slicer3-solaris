@@ -20,6 +20,7 @@ double MeanCurvatureEnergy::eval_energy(const std::vector<int> &C)
   return E;
 }
 
+
 std::valarray<double> MeanCurvatureEnergy::getforce( const std::list<int>& C_, 
                                                 const std::list<int>& L_p1, const std::list<int>& L_n1,
                                                 const std::vector<double>& phi)

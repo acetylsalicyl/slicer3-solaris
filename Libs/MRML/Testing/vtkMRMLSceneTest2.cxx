@@ -42,7 +42,7 @@ int vtkMRMLSceneTest2(int argc, char * argv [] )
     }
 
   vtkMRMLScene* scene = vtkMRMLScene::New();
-
+    typedef vtkMRMLScene Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( scene );
 
   scene->SetURL( argv[1] );

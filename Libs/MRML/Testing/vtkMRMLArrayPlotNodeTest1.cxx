@@ -18,8 +18,12 @@
 #include "TestingMacros.h"
 
 int vtkMRMLArrayPlotNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLArrayPlotNode > node1 = vtkSmartPointer< vtkMRMLArrayPlotNode >::New();
+
+    typedef  vtkMRMLArrayPlotNode Superclass, MySuperclass;
+    std::cout << node1->Superclass::GetClassName() << std::endl;
 
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 

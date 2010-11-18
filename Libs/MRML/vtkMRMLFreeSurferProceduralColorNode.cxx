@@ -24,6 +24,7 @@ Version:   $Revision: 1.0 $
 #include "vtkMRMLScene.h"
 
 #include "vtkFSLookupTable.h"
+#include <math.h>
 
 //------------------------------------------------------------------------------
 vtkMRMLFreeSurferProceduralColorNode* vtkMRMLFreeSurferProceduralColorNode::New()

@@ -78,7 +78,7 @@ public:
   enum
   {
       ColorIDModifiedEvent = 30000,
-      SelectedColorModifiedEvent = 30001,
+      SelectedColorModifiedEvent = 30001
   };
   //ETX
 
@@ -203,7 +203,7 @@ public:
     {
       EntryColumn = 0,
       NameColumn = 1,
-      ColourColumn = 2,
+      ColourColumn = 2
     };
   //ETX
 

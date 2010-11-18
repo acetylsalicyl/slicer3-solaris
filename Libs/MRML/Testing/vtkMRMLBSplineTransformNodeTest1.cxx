@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLBSplineTransformNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLBSplineTransformNode > node1 = vtkSmartPointer< vtkMRMLBSplineTransformNode >::New();
-
+   typedef  vtkMRMLBSplineTransformNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

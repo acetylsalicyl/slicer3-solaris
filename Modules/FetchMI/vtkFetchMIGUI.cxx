@@ -70,6 +70,8 @@
 #include <iterator>
 #include <sstream>
 
+#include <math.h>
+
 #define _br 0.945
 #define _bg 0.945
 #define _bb 0.975

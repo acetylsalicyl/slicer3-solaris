@@ -24,7 +24,7 @@
 int vtkSlicerComponentGUITest1(int vtkNotUsed(argc), char * vtkNotUsed(argv) [] )
 {
   vtkSlicerComponentGUI* gui = vtkSlicerComponentGUI::New();
-
+   typedef vtkSlicerComponentGUI  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( gui );
   
   TEST_SET_GET_STRING(gui, GUIName);

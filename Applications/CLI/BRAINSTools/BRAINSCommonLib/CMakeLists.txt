@@ -35,6 +35,9 @@ configure_file(
   ${CMAKE_CURRENT_BINARY_DIR}/BRAINSCommonLib.h
   )
 
+message(STATUS "BRAINSCommonLib.h.in is in ${CMAKE_CURRENT_SOURCE_DIR} BRAINSCommonLib.h is in ${CMAKE_CURRENT_BINARY_DIR}")
+
+
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_BINARY_DIR}

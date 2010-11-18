@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLDiffusionImageVolumeNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLDiffusionImageVolumeNode > node1 = vtkSmartPointer< vtkMRMLDiffusionImageVolumeNode >::New();
-
+   typedef vtkMRMLDiffusionImageVolumeNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

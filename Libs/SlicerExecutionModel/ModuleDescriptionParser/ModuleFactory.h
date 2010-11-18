@@ -19,6 +19,7 @@
 #include "ModuleDescription.h"
 
 #include <map>
+#include <sstream>
 
 class ModuleDescriptionMap;
 class ModuleFileMap;

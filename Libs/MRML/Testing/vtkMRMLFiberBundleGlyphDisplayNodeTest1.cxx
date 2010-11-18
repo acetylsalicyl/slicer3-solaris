@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLFiberBundleGlyphDisplayNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLFiberBundleGlyphDisplayNode > node1 = vtkSmartPointer< vtkMRMLFiberBundleGlyphDisplayNode >::New();
-
+   typedef vtkMRMLFiberBundleGlyphDisplayNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

@@ -123,7 +123,7 @@ public:
     Starburst = 1,
     Sphere = 2,
     Diamond3D = 3,
-    TwoD = 4,
+    TwoD = 4
   };
 //ETX
 

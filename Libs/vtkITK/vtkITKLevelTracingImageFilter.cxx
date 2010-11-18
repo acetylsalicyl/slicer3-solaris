@@ -31,6 +31,7 @@ PURPOSE.  See the above copyright notice for more information.
 #include "itkExtractImageFilter.h"
 #include "itkChainCodePath.h"
 #include "itkNumericTraits.h"
+#include <math.h>
 
 vtkCxxRevisionMacro(vtkITKLevelTracingImageFilter, "$Revision: 1.0 $");
 vtkStandardNewMacro(vtkITKLevelTracingImageFilter);

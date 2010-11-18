@@ -79,7 +79,7 @@ public:
     FS_ERROR_W_ALLOC = 5,
     FS_ERROR_W_EOF = 6,
     /// file type magic numbers
-    FS_NEW_SCALAR_MAGIC_NUMBER = 16777215,
+    FS_NEW_SCALAR_MAGIC_NUMBER = 16777215
   };
   //ETX
   

@@ -694,11 +694,11 @@ vtkMRMLVolumeNode* vtkSlicerVolumesLogic::AddArchetypeVolume (const char* filena
     }
 
   // clean up the storage node
-  if (storageNode != storageNode1)
+  if (NULL != storageNode1)
     {
     this->GetMRMLScene()->RemoveNodeNoNotify(storageNode1);
     }
-  else if (storageNode != storageNode2)
+  else if (NULL != storageNode2)
     {
     this->GetMRMLScene()->RemoveNodeNoNotify(storageNode2);
     }

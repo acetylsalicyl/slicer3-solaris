@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLROIListNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLROIListNode > node1 = vtkSmartPointer< vtkMRMLROIListNode >::New();
-
+   typedef vtkMRMLROIListNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

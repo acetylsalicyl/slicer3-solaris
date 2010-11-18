@@ -94,7 +94,7 @@ KWWidgets_WRAP_TCL(${LIB_NAME} LIB_TCL_SRCS "${LIB_SRCS}" "")
 
 TARGET_LINK_LIBRARIES(${LIB_NAME}
   ModuleDescriptionParser
-  SlicerBaseLogic 
+  SlicerBaseLogic
   SlicerBaseGUI 
   MRML
   vtkCommonTCL

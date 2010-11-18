@@ -24,6 +24,7 @@ MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 // All the functions used with respect to introduce shape 
 #include "EMLocalShapeCostFunction.h"
 #include "assert.h"
+#include <math.h>
 
 /* Foreward Defintion */
      template  <class Tin> 

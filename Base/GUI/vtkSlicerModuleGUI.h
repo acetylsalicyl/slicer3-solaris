@@ -124,7 +124,7 @@ class VTK_SLICER_BASE_GUI_EXPORT vtkSlicerModuleGUI : public vtkSlicerComponentG
  //BTX
   enum
     {
-      ModuleSelectedEvent = 73300,
+      ModuleSelectedEvent = 73300
    };
 //ETX
  protected:

@@ -22,6 +22,7 @@
 #include "vtkImageData.h"
 #include "vtkMRMLScalarVolumeNode.h"
 #include "igtlImageMessage.h"
+#include <math.h>
 
 vtkStandardNewMacro(vtkIGTLToMRMLImage);
 vtkCxxRevisionMacro(vtkIGTLToMRMLImage, "$Revision$");

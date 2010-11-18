@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLdGEMRICProceduralColorNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLdGEMRICProceduralColorNode > node1 = vtkSmartPointer< vtkMRMLdGEMRICProceduralColorNode >::New();
-
+   typedef  vtkMRMLdGEMRICProceduralColorNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

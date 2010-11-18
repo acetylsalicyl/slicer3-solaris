@@ -59,7 +59,7 @@ public:
       FS_TRIANGLE_FILE_MAGIC_NUMBER = (-2 & 0x00ffffff),
       FS_NUM_VERTS_IN_QUAD_FACE = 4, /// dealing with quads
       FS_NUM_VERTS_IN_TRI_FACE = 3, /// dealing with tris
-      FS_MAX_NUM_FACES_PER_VERTEX = 10, /// kinda arbitrary
+      FS_MAX_NUM_FACES_PER_VERTEX = 10 /// kinda arbitrary
   };
   //ETX
 

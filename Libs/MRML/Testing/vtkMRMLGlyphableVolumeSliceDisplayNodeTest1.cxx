@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLGlyphableVolumeSliceDisplayNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLGlyphableVolumeSliceDisplayNode > node1 = vtkSmartPointer< vtkMRMLGlyphableVolumeSliceDisplayNode >::New();
-
+   typedef vtkMRMLGlyphableVolumeSliceDisplayNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

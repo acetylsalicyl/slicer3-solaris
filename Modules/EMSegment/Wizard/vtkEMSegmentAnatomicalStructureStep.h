@@ -87,7 +87,7 @@ protected:
     {
       EntryColumn = 0,
       NameColumn = 1,
-      ColourColumn = 2,
+      ColourColumn = 2
     };
   //ETX
   

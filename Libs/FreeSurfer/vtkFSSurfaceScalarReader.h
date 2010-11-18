@@ -50,7 +50,7 @@ public:
   //BTX
   enum 
     {
-      FS_NEW_SCALAR_MAGIC_NUMBER = 16777215,
+      FS_NEW_SCALAR_MAGIC_NUMBER = 16777215
     };
   //ETX
 protected:

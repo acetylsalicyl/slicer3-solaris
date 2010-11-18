@@ -54,7 +54,7 @@ class VTK_VOLUMES_EXPORT vtkSlicerGradientsWidget : public vtkSlicerWidget
     //BTX
     enum
       {
-      ChangedEvent = 1234,
+      ChangedEvent = 1234
       };
     //ETX
 

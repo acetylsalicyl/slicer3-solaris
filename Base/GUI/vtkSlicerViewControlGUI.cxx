@@ -39,6 +39,8 @@
 
 #include "vtkMRMLSceneSnapshotNode.h"
 
+#include <math.h>
+
 // uncomment in order to stub out the NavZoom widget.
 //#define NAVZOOMWIDGET_DEBUG
 

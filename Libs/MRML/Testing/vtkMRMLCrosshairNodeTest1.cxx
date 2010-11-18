@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLCrosshairNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLCrosshairNode > node1 = vtkSmartPointer< vtkMRMLCrosshairNode >::New();
-
+   typedef vtkMRMLCrosshairNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

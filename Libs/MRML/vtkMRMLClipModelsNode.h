@@ -94,7 +94,7 @@ public:
     {
       ClipOff = 0,
       ClipPositiveSpace = 1,
-      ClipNegativeSpace = 2,
+      ClipNegativeSpace = 2
     };
   //ETX
   

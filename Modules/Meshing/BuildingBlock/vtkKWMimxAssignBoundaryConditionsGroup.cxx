@@ -96,6 +96,7 @@ PURPOSE.  See the above copyright notices for more information.
 #include "Resources/mimxNodeSetDfns.h"
 #include "Resources/mimxSmallApply.h"
 #include "Resources/mimxStepDef.h"
+#include <math.h>
 
 // define the option types
 #define VTK_KW_OPTION_NONE         0

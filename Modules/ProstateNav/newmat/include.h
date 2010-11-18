@@ -263,9 +263,14 @@
 #define ATandT
 #include <stdlib.h>
 #ifdef WANT_STREAM
+#if defined (sun) || (__sun) //if on Solaris
+#include <iostream>
+#include <iomanip>
+#endif //Solaris
+#else
 #include <iostream.h>
 #include <iomanip.h>
-#endif
+#endif //WANT_STREAM
 #ifdef WANT_MATH
 #include <math.h>
 #define SystemV                         // use System V

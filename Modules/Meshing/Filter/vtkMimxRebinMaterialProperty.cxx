@@ -33,6 +33,7 @@ PURPOSE.  See the above copyright notices for more information.
 #include "vtkCellData.h"
 
 #include "vtkMimxRebinMaterialProperty.h"
+#include <math.h>
 
 vtkCxxRevisionMacro(vtkMimxRebinMaterialProperty,"$Revision: 1.5 $");
 vtkStandardNewMacro(vtkMimxRebinMaterialProperty);

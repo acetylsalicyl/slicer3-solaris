@@ -16,7 +16,7 @@
 
 #include "itkImageRegionConstIteratorWithIndex.h"
 #include "itkImageRegionConstIterator.h"
-
+#include <math.h>
 
 /* ============================================================   */
 template< typename TPixel >

@@ -54,6 +54,7 @@
 #include "vtkMRMLFreeSurferProceduralColorNode.h"
 #include "vtkMRMLProceduralColorNode.h"
 #include "vtkMRMLPETProceduralColorNode.h"
+#include <math.h>
 
 //--- goodies for plotting
 #include "vtkMRMLDoubleArrayNode.h"

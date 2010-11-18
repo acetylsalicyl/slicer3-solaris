@@ -43,11 +43,12 @@ public:
 };
  
 int vtkMRMLColorNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLColorNodeTestHelper1 > node1 = vtkSmartPointer< vtkMRMLColorNodeTestHelper1 >::New();
 
   node1->DebugOn();
-
+   typedef vtkMRMLColorNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   vtkMRMLNode * newNode = node1->CreateNodeInstance();

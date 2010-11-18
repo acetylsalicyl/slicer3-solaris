@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLUnstructuredGridDisplayNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLUnstructuredGridDisplayNode > node1 = vtkSmartPointer< vtkMRMLUnstructuredGridDisplayNode >::New();
-
+   typedef vtkMRMLUnstructuredGridDisplayNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLNRRDStorageNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLNRRDStorageNode > node1 = vtkSmartPointer< vtkMRMLNRRDStorageNode >::New();
-
+   typedef vtkMRMLNRRDStorageNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

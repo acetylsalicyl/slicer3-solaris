@@ -39,6 +39,7 @@ PURPOSE.  See the above copyright notices for more information.
 #include "vtkRenderer.h"
 #include "vtkPointData.h"
 #include "vtkStringArray.h"
+#include "math.h"
 
 
 vtkCxxRevisionMacro(vtkMimxBoundaryConditionActor, "$Revision: 1.5 $");

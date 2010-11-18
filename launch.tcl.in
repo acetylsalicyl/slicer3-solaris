@@ -144,16 +144,16 @@ proc launch_SetEnvironment {} {
     
     
     if {$::tcl_platform(os) == "SunOS"} {
-      set isainfo [exec isainfo -b]
-      set SlicerBinaryBitness [exec file $::env(Slicer3_HOME)/bin/Slicer3-real | cut -d "," -f 1 | cut -d " " -f2 | cut -d "-" -f1]
-        if {$SlicerBinaryBitness == "32"} {
-            set ::BUILD(bitness) "32"
-        } elseif {$SlicerBinaryBitness == "64" && $isainfo == 64} {
-            set ::BUILD(bitness) "64"
-        } elseif {$SlicerBinaryBitness == "64" && $isainfo == 32} {
-    	ShowAndLogError "You can't run a 64 bit program on a 32 bit kernel!"
-    	exit $::EXIT_CODE_GENERIC_ERROR
-        }
+#      set isainfo [exec isainfo -b]
+#      set SlicerBinaryBitness [exec file $::env(Slicer3_HOME)/bin/Slicer3-real | cut -d "," -f 1 | cut -d " " -f2 | cut -d "-" -f1]
+#        if {$SlicerBinaryBitness == "32"} {
+#            set ::Slicer3_BITNESS "32"
+#        } elseif {$SlicerBinaryBitness == "64" && $isainfo == 64} {
+            set ::Slicer3_BITNESS "64"
+#        } elseif {$SlicerBinaryBitness == "64" && $isainfo == 32} {
+#    	ShowAndLogError "You can't run a 64 bit program on a 32 bit kernel!"
+#    	exit $::EXIT_CODE_GENERIC_ERROR
+#        }
     }	
     
     #
@@ -183,7 +183,7 @@ proc launch_SetEnvironment {} {
     
       set ::env(X11_LIB_DIR) ""
       set ::env(SFW_LIB_DIR) ""
-      if { $::env(BUILD) == $::SOLARIS && $::BUILD(bitness) == "32"} {
+      if { $::env(BUILD) == $::SOLARIS && $::Slicer3_BITNESS == "32"} {
         set ::env(X11_LIB_DIR) /usr/X11/lib
         set ::env(SFW_LIB_DIR) /usr/sfw/lib
       } else {
@@ -204,8 +204,13 @@ proc launch_SetEnvironment {} {
       set ::env(QT_LIB_DIR)         $::env(Slicer3_HOME)/lib/Qt
       # Let's make QT binaries available
       set ::env(QT_BINARY_DIR)         $::env(Slicer3_HOME)/bin
-    
+
+    if { $::env(BUILD) == $::SOLARIS && $::Slicer3_BITNESS == "32"} {
       set ::env(ITK_BIN_DIR)        $::env(Slicer3_HOME)/lib/InsightToolkit
+      } else {
+      set ::env(ITK_BIN_DIR)        $::env(Slicer3_HOME)/lib/InsightToolkit/amd64
+      }
+
     
       set ::env(Teem_DIR)           $::env(Slicer3_HOME)/lib/Teem-@Teem_VERSION_MAJOR@.@Teem_VERSION_MINOR@.@Teem_VERSION_PATCH@
     
@@ -251,7 +256,7 @@ proc launch_SetEnvironment {} {
     
       set ::env(Slicer3_COMPILER_DIR) ""
       if { $::env(BUILD) == $::SOLARIS } {
-        set ::env(Slicer3_COMPILER_DIR) $::env(Slicer3_HOME)/lib/Slicer3/CompilerLibs/$::BUILD(bitness)
+        set ::env(Slicer3_COMPILER_DIR) $::env(Slicer3_HOME)/lib/Slicer3/CompilerLibs/$::Slicer3_BITNESS
       }
     
       # Slicer3 Base
@@ -320,7 +325,7 @@ proc launch_SetEnvironment {} {
     
       # additional system libs
     
-      if { $::env(BUILD) == $::SOLARIS && $::BUILD(bitness) == "32"} {
+      if { $::env(BUILD) == $::SOLARIS && $::Slicer3_BITNESS == "32"} {
         set ::env(X11_LIB_DIR) /usr/X11/lib
         set ::env(SFW_LIB_DIR) /usr/sfw/lib
       } else {
@@ -330,7 +335,7 @@ proc launch_SetEnvironment {} {
     
       set ::env(Slicer3_COMPILER_DIR) ""
       if { $::env(BUILD) == $::SOLARIS } {
-        set ::env(Slicer3_COMPILER_DIR) $::env(Slicer3_HOME)/lib/Slicer3/CompilerLibs/$::BUILD(bitness)
+        set ::env(Slicer3_COMPILER_DIR) $::env(Slicer3_HOME)/lib/Slicer3/CompilerLibs/$::Slicer3_BITNESS
       }
     
     

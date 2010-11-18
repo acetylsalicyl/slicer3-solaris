@@ -40,9 +40,10 @@ public:
 };
  
 int vtkMRMLStorableNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLStorableNodeTestHelper1 > node1 = vtkSmartPointer< vtkMRMLStorableNodeTestHelper1 >::New();
-
+   typedef  vtkMRMLStorableNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   vtkMRMLNode * newNode = node1->CreateNodeInstance();

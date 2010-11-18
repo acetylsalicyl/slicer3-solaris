@@ -44,9 +44,10 @@ public:
 };
  
 int vtkMRMLDiffusionTensorDisplayPropertiesNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLDiffusionTensorDisplayPropertiesNodeTestHelper1 > node1 = vtkSmartPointer< vtkMRMLDiffusionTensorDisplayPropertiesNodeTestHelper1 >::New();
-
+   typedef vtkMRMLDiffusionTensorDisplayPropertiesNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   return EXIT_SUCCESS;

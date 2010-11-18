@@ -1,6 +1,6 @@
 #include "vtkITKBSplineTransform.h"
 #include "vtkObjectFactory.h"
-
+#include <math.h>
 
 // Helper classes to handle dynamic setting of spline orders
 class vtkITKBSplineTransformHelper

@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLModelStorageNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLModelStorageNode > node1 = vtkSmartPointer< vtkMRMLModelStorageNode >::New();
-
+   typedef vtkMRMLModelStorageNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   return EXIT_SUCCESS;

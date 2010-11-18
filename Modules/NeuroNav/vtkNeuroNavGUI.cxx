@@ -42,6 +42,7 @@
 
 #include "vtkCylinderSource.h"
 #include "vtkMRMLLinearTransformNode.h"
+#include <math.h>
 
 
 //---------------------------------------------------------------------------

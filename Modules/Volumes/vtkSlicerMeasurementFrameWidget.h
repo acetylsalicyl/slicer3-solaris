@@ -47,7 +47,7 @@ class VTK_VOLUMES_EXPORT vtkSlicerMeasurementFrameWidget : public vtkSlicerWidge
     //BTX
     enum
       {
-      ChangedEvent = 1234,
+      ChangedEvent = 1234
       };
     //ETX
 

@@ -20,7 +20,7 @@
 int vtkDataIOManagerLogicTest1(int , char * [] )
 {
   vtkSmartPointer< vtkDataIOManagerLogic > node1 = vtkSmartPointer< vtkDataIOManagerLogic >::New();
-
+   typedef  vtkDataIOManagerLogic Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   vtkSmartPointer< vtkDataIOManagerLogic > node2 = vtkSmartPointer< vtkDataIOManagerLogic >::New();

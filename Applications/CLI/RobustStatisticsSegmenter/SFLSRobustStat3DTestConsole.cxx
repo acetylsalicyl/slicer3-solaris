@@ -8,7 +8,7 @@
 
 
 #include "labelMapPreprocessor.h"
-
+#include <signal.h>
 
 template< typename TPixel >
 itk::Image< short, 3 >::Pointer 

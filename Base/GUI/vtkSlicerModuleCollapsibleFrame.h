@@ -165,7 +165,7 @@ class VTK_SLICER_BASE_GUI_EXPORT vtkSlicerModuleCollapsibleFrame : public vtkKWC
   enum
     {
       FrameCollapseEvent = 11000,
-      FrameExpandEvent,
+      FrameExpandEvent
     };
   //ETX
 

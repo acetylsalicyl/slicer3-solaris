@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLDoubleArrayNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLDoubleArrayNode > node1 = vtkSmartPointer< vtkMRMLDoubleArrayNode >::New();
-
+   typedef  vtkMRMLDoubleArrayNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

@@ -97,7 +97,7 @@ set(lib_name VolumeRenderingCuda1)
 
 ## Set the Libraries we link
 SET(VolumeRenderingCuda1_LIBRARIES
-  SlicerBaseLogic 
+  SlicerBaseLogic
   SlicerBaseGUI 
   MRML
   vtkITK
@@ -188,7 +188,7 @@ set(lib_name VolumeRenderingCuda1)
 
 ## Set the Libraries we link
 SET(VolumeRenderingCuda1_LIBRARIES
-  SlicerBaseLogic 
+  SlicerBaseLogic
   SlicerBaseGUI 
   MRML
   vtkITK

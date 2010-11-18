@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLSliceCompositeNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLSliceCompositeNode > node1 = vtkSmartPointer< vtkMRMLSliceCompositeNode >::New();
-
+   typedef vtkMRMLSliceCompositeNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

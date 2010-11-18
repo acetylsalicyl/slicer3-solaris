@@ -72,7 +72,7 @@ public:
 //BTX
   enum
     {
-      FileHeaderOKEvent = 67310,
+      FileHeaderOKEvent = 67310
     };
 //ETX
 protected:

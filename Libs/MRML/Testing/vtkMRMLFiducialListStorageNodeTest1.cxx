@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLFiducialListStorageNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLFiducialListStorageNode > node1 = vtkSmartPointer< vtkMRMLFiducialListStorageNode >::New();
-
+   typedef vtkMRMLFiducialListStorageNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

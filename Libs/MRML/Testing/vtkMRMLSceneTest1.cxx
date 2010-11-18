@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLSceneTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLScene > scene1 = vtkSmartPointer< vtkMRMLScene >::New();
-
+   typedef vtkMRMLScene  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( scene1 );
 
   std::cout << "GetNumberOfRegisteredNodeClasses() = ";

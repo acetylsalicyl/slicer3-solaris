@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <math.h>
 
 #ifdef _WIN32
 #ifndef M_PI

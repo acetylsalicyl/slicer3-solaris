@@ -44,6 +44,8 @@ Version:   $Revision: 1.2 $
 #include <iostream>
 #include <sstream>
 
+#include <math.h>
+
 //------------------------------------------------------------------------------
 vtkGradientAnisotropicDiffusionFilterGUI* vtkGradientAnisotropicDiffusionFilterGUI::New()
 {

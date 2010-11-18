@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLLabelMapVolumeDisplayNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLLabelMapVolumeDisplayNode > node1 = vtkSmartPointer< vtkMRMLLabelMapVolumeDisplayNode >::New();
-
+   typedef vtkMRMLLabelMapVolumeDisplayNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

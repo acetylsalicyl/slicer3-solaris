@@ -192,7 +192,7 @@ public:
     /// changed
     enum
     {
-        FiducialListIDModifiedEvent = 20000,
+        FiducialListIDModifiedEvent = 20000
     };
     //ETX
 
@@ -442,7 +442,7 @@ protected:
         OrYColumn = 8,
         OrZColumn = 9,
         LockColumn = 10,
-        NumberOfColumns = 11,
+        NumberOfColumns = 11
     };
     //ETX
 

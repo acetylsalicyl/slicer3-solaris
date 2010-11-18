@@ -78,7 +78,7 @@ switch $::tcl_platform(os) {
     "SunOS" { 
         set isainfo [exec isainfo -b]
         set ::GETBUILDTEST(bitness) "$isainfo"
-        set ::GETBUILDTEST(compiler) "gcc"
+        set ::GETBUILDTEST(compiler) "suncc"
     }
     "Linux" {           
         if {$::tcl_platform(machine) == "x86_64"} {

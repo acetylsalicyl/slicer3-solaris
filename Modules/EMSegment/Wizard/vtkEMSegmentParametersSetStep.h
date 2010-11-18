@@ -18,6 +18,7 @@ Version:   $Revision: 1.6 $
 
 #include "vtkEMSegmentStep.h"
 #include <vector>
+#include <string>
 
 class vtkKWFrameWithLabel;
 class vtkKWMenuButtonWithLabel;

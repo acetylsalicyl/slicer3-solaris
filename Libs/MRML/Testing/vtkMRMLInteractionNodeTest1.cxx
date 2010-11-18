@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLInteractionNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLInteractionNode > node1 = vtkSmartPointer< vtkMRMLInteractionNode >::New();
-
+   typedef vtkMRMLInteractionNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

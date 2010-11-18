@@ -18,6 +18,7 @@
 #include "vtkTransform.h"
 
 #include "vtkMRMLLinearTransformNode.h"
+#include <math.h>
 
 //---------------------------------------------------------------------------
 vtkStandardNewMacro (vtkSlicerTransformEditorWidget );

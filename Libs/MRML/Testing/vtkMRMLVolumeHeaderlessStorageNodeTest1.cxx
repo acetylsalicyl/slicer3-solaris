@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLVolumeHeaderlessStorageNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLVolumeHeaderlessStorageNode > node1 = vtkSmartPointer< vtkMRMLVolumeHeaderlessStorageNode >::New();
-
+   typedef vtkMRMLVolumeHeaderlessStorageNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

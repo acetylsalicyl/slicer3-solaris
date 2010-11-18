@@ -41,6 +41,7 @@
 #include "vtkTransform.h"
 
 #include "vtkMeasurementsRulerWidget.h"
+#include <math.h>
 
 class vtkAffineCallback : public vtkCommand
 {

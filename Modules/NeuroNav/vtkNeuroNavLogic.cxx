@@ -30,6 +30,8 @@ Version:   $Revision: $
 
 #include "vnl/vnl_float_3.h"
 
+#include <math.h>
+
 
 vtkCxxRevisionMacro(vtkNeuroNavLogic, "$Revision: 1.9.12.1 $");
 vtkStandardNewMacro(vtkNeuroNavLogic);

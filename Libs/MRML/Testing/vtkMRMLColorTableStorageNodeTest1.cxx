@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLColorTableStorageNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLColorTableStorageNode > node1 = vtkSmartPointer< vtkMRMLColorTableStorageNode >::New();
-
+   typedef vtkMRMLColorTableStorageNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

@@ -26,6 +26,7 @@ Version:   $Revision: 1.18 $
 #include "vtkDataArray.h"
 
 #include <string>
+#include <math.h>
 
 namespace itk {
 

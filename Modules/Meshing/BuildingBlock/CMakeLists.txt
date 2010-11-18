@@ -157,7 +157,7 @@ ADD_LIBRARY(${LIB_NAME} ${LIB_TCL_SRCS} ${LIB_SRCS})
 #TARGET_LINK_LIBRARIES(${LIB_NAME} ${KWWidgets_LIBRARIES})
 
 TARGET_LINK_LIBRARIES(${LIB_NAME}
-  SlicerBaseLogic 
+  SlicerBaseLogic
   SlicerBaseGUI 
   MRML
   vtkCommonTCL

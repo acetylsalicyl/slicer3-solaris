@@ -80,13 +80,13 @@ public:
       ViewPan,
       ViewZoom,
       ViewRotate,
-      ViewTransform,
+      ViewTransform
     };
   /// events
   enum
     {
       InteractionModeChangedEvent = 19001,
-      TransientTimeoutEvent,
+      TransientTimeoutEvent
     };
   //ETX 
 

@@ -43,9 +43,10 @@ public:
 };
  
 int vtkMRMLColorTableNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLColorTableNodeTestHelper1 > node1 = vtkSmartPointer< vtkMRMLColorTableNodeTestHelper1 >::New();
-
+   typedef  vtkMRMLColorTableNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   return EXIT_SUCCESS;

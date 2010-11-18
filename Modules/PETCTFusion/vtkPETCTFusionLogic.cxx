@@ -44,6 +44,7 @@
 #include "vtkPETCTFusion.h"
 
 #include "vtkMRMLScene.h"
+#include <math.h>
 
 
 //----------------------------------------------------------------------------

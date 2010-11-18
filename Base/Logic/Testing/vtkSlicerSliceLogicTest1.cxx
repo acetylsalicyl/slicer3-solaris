@@ -20,7 +20,7 @@
 int vtkSlicerSliceLogicTest1(int , char * [] )
 {
   vtkSmartPointer< vtkSlicerSliceLogic > node1 = vtkSmartPointer< vtkSlicerSliceLogic >::New();
-
+   typedef vtkSlicerSliceLogic Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
 #define TEST_SET_GET_OBJECT(object,prefix,variable) \

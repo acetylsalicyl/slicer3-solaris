@@ -72,7 +72,7 @@ INCLUDE_DIRECTORIES(
 # --------------------------------------------------------------------------
 # Build the library
 SET(CudaSupport_LIBRARIES
-  SlicerBaseLogic 
+  SlicerBaseLogic
   SlicerBaseGUI 
   MRML
   vtkCommon

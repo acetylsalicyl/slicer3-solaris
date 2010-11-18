@@ -122,7 +122,7 @@ public:
       PickEvent,
       PlaceEvent,
       SelectRegionEvent,
-      PlotEvent,
+      PlotEvent
   };
   //ETX
     

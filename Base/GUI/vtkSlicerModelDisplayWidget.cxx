@@ -17,6 +17,7 @@
 // for scalars
 #include "vtkPointData.h"
 #include "vtkCellData.h"
+#include <math.h>
 
 //---------------------------------------------------------------------------
 vtkStandardNewMacro (vtkSlicerModelDisplayWidget );

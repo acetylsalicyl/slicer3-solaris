@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLFreeSurferModelStorageNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLFreeSurferModelStorageNode > node1 = vtkSmartPointer< vtkMRMLFreeSurferModelStorageNode >::New();
-
+   typedef vtkMRMLFreeSurferModelStorageNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

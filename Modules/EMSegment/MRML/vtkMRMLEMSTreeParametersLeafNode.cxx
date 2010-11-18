@@ -4,6 +4,7 @@
 #include <algorithm>
 
 #include <vtksys/ios/sstream>
+#include <math.h>
 
 //-----------------------------------------------------------------------------
 vtkMRMLEMSTreeParametersLeafNode* 

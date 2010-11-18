@@ -33,6 +33,7 @@ PURPOSE.  See the above copyright notices for more information.
 #include "itkAffineTransform.h"
 #include "itkLinearInterpolateImageFunction.h"
 #include "itkImageFileWriter.h"
+#include <math.h>
 
 vtkMimxClipImageFromBox::vtkMimxClipImageFromBox()
 {

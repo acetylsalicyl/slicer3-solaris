@@ -39,9 +39,10 @@ public:
 };
  
 int vtkMRMLTransformableNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLTransformableNodeTestHelper1 > node1 = vtkSmartPointer< vtkMRMLTransformableNodeTestHelper1 >::New();
-
+   typedef  vtkMRMLTransformableNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   return EXIT_SUCCESS;

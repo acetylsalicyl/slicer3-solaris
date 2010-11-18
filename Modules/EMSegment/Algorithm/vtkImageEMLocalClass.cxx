@@ -14,7 +14,7 @@
 #include "vtkImageEMLocalClass.h"
 #include "vtkObjectFactory.h"
 #include "vtkImageData.h"
-
+# include <math.h>
 //------------------------------------------------------------------------
 vtkImageEMLocalClass* vtkImageEMLocalClass::New()
 {

@@ -27,6 +27,7 @@
 #include "vtkKWSpinBoxWithLabel.h"
 
 #include "vtkRenderer.h"
+#include <math.h>
 
 //---------------------------------------------------------------------------
 vtkStandardNewMacro ( vtkSlicerSliceControllerWidget );

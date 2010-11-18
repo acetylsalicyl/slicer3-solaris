@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLDiffusionTensorVolumeSliceDisplayNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLDiffusionTensorVolumeSliceDisplayNode > node1 = vtkSmartPointer< vtkMRMLDiffusionTensorVolumeSliceDisplayNode >::New();
-
+   typedef vtkMRMLDiffusionTensorVolumeSliceDisplayNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

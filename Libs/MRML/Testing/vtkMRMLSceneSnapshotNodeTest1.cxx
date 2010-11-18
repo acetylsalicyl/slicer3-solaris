@@ -18,8 +18,11 @@
 #include "TestingMacros.h"
 
 int vtkMRMLSceneSnapshotNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLSceneSnapshotNode > node1 = vtkSmartPointer< vtkMRMLSceneSnapshotNode >::New();
+
+   typedef vtkMRMLSceneSnapshotNode  Superclass, MySuperclass;
 
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 

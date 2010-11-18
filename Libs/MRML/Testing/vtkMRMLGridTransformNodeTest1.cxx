@@ -18,9 +18,11 @@
 #include "TestingMacros.h"
 
 int vtkMRMLGridTransformNodeTest1(int , char * [] )
+
+
 {
   vtkSmartPointer< vtkMRMLGridTransformNode > node1 = vtkSmartPointer< vtkMRMLGridTransformNode >::New();
-
+typedef vtkMRMLGridTransformNode Superclass, Mysuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

@@ -99,7 +99,7 @@ public:
 //BTX
   enum
     {
-      SelectedEvent = 711100,
+      SelectedEvent = 711100
    };
 //ETX
 protected:

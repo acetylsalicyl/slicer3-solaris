@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLVectorVolumeNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLVectorVolumeNode > node1 = vtkSmartPointer< vtkMRMLVectorVolumeNode >::New();
-
+   typedef vtkMRMLVectorVolumeNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

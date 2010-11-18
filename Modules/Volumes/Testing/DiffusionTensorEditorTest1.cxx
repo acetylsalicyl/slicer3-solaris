@@ -28,7 +28,7 @@ int DiffusionTensorEditorTest1(int argc, char * argv [] )
     }
 
   vtkSmartPointer< vtkMRMLScene > scene = vtkSmartPointer< vtkMRMLScene >::New();
-
+   typedef vtkMRMLScene  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( scene );
 
   scene->SetURL( argv[1] );

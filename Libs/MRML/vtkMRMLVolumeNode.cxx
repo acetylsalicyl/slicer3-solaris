@@ -26,6 +26,7 @@ Version:   $Revision: 1.14 $
 #include "vtkMRMLScene.h"
 
 #include "vtkMRMLScalarVolumeDisplayNode.h"
+#include <math.h>
 
 //----------------------------------------------------------------------------
 vtkMRMLVolumeNode::vtkMRMLVolumeNode()

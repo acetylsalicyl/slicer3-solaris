@@ -14,6 +14,7 @@
 #include "vtkFSLookupTable.h"
 
 #include "vtkObjectFactory.h"
+#include <math.h>
 
 vtkFSLookupTable* vtkFSLookupTable::New()
 {

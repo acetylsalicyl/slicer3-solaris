@@ -102,7 +102,7 @@ public:
       FSLUTBLUERED = 2,
       FSLUTREDBLUE = 3,
       FSLUTREDGREEN = 4,
-      FSLUTGREENRED = 5,
+      FSLUTGREENRED = 5
     };
     //ETX
 protected:

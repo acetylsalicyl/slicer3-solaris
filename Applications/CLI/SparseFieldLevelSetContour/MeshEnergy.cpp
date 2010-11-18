@@ -12,9 +12,11 @@
 
 ==========================================================================*/
 #include "MeshEnergy.h"
+#include <math.h>
 
 void MeshEnergy::GetNormalsTangentPlane( const std::vector<int>& C, const std::vector<double>& phi,
                                          std::valarray<double>& ne1, std::valarray<double>& ne2, 
+
                                          MeshData* vtkNotUsed(meshdata))
 {
   vtkPoints*    verts = meshdata->polydata->GetPoints();
@@ -148,12 +150,14 @@ void MeshEnergy::GetKappa( const std::vector<int>& C, const std::vector<double>&
 // apply rotate2 * rotate1 to each *translated* neighbor of this k-th point
     ::size_t num_neigh = meshdata->adj[k].myNeighbs.size();
     double vec[3];
+
     std::vector<double> vv(3);
     std::vector<double> vv_(3);
     std::valarray<double> xdata(num_neigh);
     std::valarray<double> ydata(num_neigh);
     std::valarray<double> zdata(num_neigh);
 // step 2. create temporary set of std::vectors as copies of neighboring points
+
 // translated to origin
 // step 3. apply the rotation to all these points
     for (::size_t i = 0; i < num_neigh; i++ )
@@ -208,7 +212,9 @@ continue;*/
 
 // step 4. find least-squares fit for phi(x,y) = ax^2 + bxy + cy^2
 // to get second derivatives
+
   std::valarray<double> RHS(3); // A'z
+
     RHS[0] = ( xdata * xdata * zdata  ).sum();
     RHS[1] = ( xdata * ydata * zdata  ).sum();
     RHS[2] = ( ydata * ydata * zdata  ).sum();

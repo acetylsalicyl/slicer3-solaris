@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLLayoutNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLLayoutNode > node1 = vtkSmartPointer< vtkMRMLLayoutNode >::New();
-
+   typedef  vtkMRMLLayoutNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

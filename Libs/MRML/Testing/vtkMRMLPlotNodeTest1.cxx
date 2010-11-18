@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLPlotNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLPlotNode > node1 = vtkSmartPointer< vtkMRMLPlotNode >::New();
-
+   typedef vtkMRMLPlotNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

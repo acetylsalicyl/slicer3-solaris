@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLNonlinearTransformNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLNonlinearTransformNode > node1 = vtkSmartPointer< vtkMRMLNonlinearTransformNode >::New();
-
+   typedef  vtkMRMLNonlinearTransformNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

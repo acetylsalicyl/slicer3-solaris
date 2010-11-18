@@ -25,6 +25,8 @@
 #include "vtkMRMLFreeSurferProceduralColorNode.h"
 
 #include "vtkKWMessageDialog.h"
+#include <math.h>
+
 
 //---------------------------------------------------------------------------
 vtkStandardNewMacro (vtkSlicerColorEditWidget );

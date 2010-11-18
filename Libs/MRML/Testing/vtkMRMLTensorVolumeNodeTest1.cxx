@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLTensorVolumeNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLTensorVolumeNode > node1 = vtkSmartPointer< vtkMRMLTensorVolumeNode >::New();
-
+   typedef  vtkMRMLTensorVolumeNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

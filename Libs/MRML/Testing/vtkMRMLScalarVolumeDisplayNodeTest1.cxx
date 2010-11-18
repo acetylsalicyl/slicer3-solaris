@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLScalarVolumeDisplayNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLScalarVolumeDisplayNode > node1 = vtkSmartPointer< vtkMRMLScalarVolumeDisplayNode >::New();
-
+   typedef vtkMRMLScalarVolumeDisplayNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

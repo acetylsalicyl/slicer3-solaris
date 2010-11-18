@@ -52,7 +52,7 @@ int vtkObserverManagerTest1(int , char * [] )
 {
 
   vtkSmartPointer< vtkObserverManager > observerManager = vtkSmartPointer< vtkObserverManager >::New();
-  
+   typedef  vtkObserverManager Superclass, MySuperclass;
   if( observerManager == NULL )
     {
     std::cerr << "This class is returning a NULL pointer from its New() method" << std::endl;

@@ -8,6 +8,8 @@
 int vtkMRMLMeasurementsNodeTest1(int , char * [] )
 {
   vtkSmartPointer< vtkMRMLMeasurementsNode > node1 = vtkSmartPointer< vtkMRMLMeasurementsNode >::New();
+  typedef vtkMRMLMeasurementsNode Superclass, MySuperclass;
+
  EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

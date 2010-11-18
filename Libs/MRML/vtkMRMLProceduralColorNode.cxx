@@ -22,6 +22,7 @@ Version:   $Revision: 1.0 $
 #include "vtkMRMLScene.h"
 
 #include "vtkColorTransferFunction.h"
+#include <math.h>
 
 //------------------------------------------------------------------------------
 vtkMRMLProceduralColorNode* vtkMRMLProceduralColorNode::New()

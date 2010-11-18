@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLFreeSurferProceduralColorNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLFreeSurferProceduralColorNode > node1 = vtkSmartPointer< vtkMRMLFreeSurferProceduralColorNode >::New();
-
+   typedef vtkMRMLFreeSurferProceduralColorNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

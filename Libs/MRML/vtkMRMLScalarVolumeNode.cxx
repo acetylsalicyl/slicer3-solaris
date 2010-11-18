@@ -16,6 +16,8 @@ Version:   $Revision: 1.14 $
 #include <iostream>
 #include <sstream>
 
+#include <math.h>
+
 #include "vtkObjectFactory.h"
 
 #include "vtkMRMLScalarVolumeNode.h"

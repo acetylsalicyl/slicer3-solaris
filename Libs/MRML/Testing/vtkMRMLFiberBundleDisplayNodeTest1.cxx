@@ -48,10 +48,11 @@ public:
 };
  
 int vtkMRMLFiberBundleDisplayNodeTest1(int , char * [] )
+
 {
 
   vtkSmartPointer< vtkMRMLFiberBundleDisplayNodeTestHelper1 > node1 = vtkSmartPointer< vtkMRMLFiberBundleDisplayNodeTestHelper1 >::New();
-
+   typedef  vtkMRMLFiberBundleDisplayNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

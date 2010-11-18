@@ -64,9 +64,10 @@ public:
 };
  
 int vtkMRMLTransformNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLTransformNodeTestHelper1 > node1 = vtkSmartPointer< vtkMRMLTransformNodeTestHelper1 >::New();
-
+   typedef vtkMRMLTransformNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

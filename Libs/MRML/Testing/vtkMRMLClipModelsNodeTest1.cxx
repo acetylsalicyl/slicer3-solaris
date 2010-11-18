@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLClipModelsNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLClipModelsNode > node1 = vtkSmartPointer< vtkMRMLClipModelsNode >::New();
-
+   typedef  vtkMRMLClipModelsNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

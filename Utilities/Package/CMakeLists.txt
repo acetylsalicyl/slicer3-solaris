@@ -35,66 +35,62 @@ IF (VTK_WRAP_TCL)
   endif(Slicer3_TCL_DIR)
 ENDIF (VTK_WRAP_TCL)
 
+
+# SOLARIS Section begin 
+
 # In the following section we tell the packager to include libslicerlibcurl.so
 # in the CPACK package, because we build it as a .so on Solaris,
 # and need it run-time. And we find and package a few more libs too.
+# Altough on Solaris we deliver Slicer as a 64 bit only package, the 32 bit sections remain here as "placeholders" (should the need arise). 
 
 if(CMAKE_SYSTEM MATCHES "SunOS.*")
   FIND_PATH(CURL_DIR libslicerlibcurl.so ${Slicer3_BINARY_DIR}/../Slicer3-lib/cmcurl-build/bin)
-  FIND_PATH(SFW_LIB_DIR libgcc_s.so.1 /usr/sfw/lib)
-  FIND_PATH(SFW_LIB_DIR_64 libgcc_s.so.1 /usr/sfw/lib/amd64)
+
+# We have to have stdcxx4.so in /usr/lib[/amd64] too, so for the same location we only need one variable.
+
   FIND_PATH(SUN_CC_LIB_DIR libCrun.so.1 /usr/lib)
   FIND_PATH(SUN_CC_LIB_DIR_64 libCrun.so.1 /usr/lib/amd64)
-
-# This might look ugly here: since CPACK puts the softlink itself into the install dir, and Sun puts stlport.so and stlport.so.1
-# as softlinks into the /opt/SUNWspro/lib/stlport(/amd64) directories, we have to feed more directories into CPACK to find libstlport.so, and libstlport.so.1
-# Like: /opt/SUNWspro/lib/stlport4/amd64/libstlport.so -> ./libstlport.so.1*
-# /opt/SUNWspro/lib/stlport4/amd64/libstlport.so.1 -> ../../../prod/lib/stlport4/amd64/libstlport.so.1*
-# /opt/SUNWspro/prod/lib/stlport4/amd64/libstlport.so.1*
-# /opt/SUNWspro/prod/lib/stlport4/libstlport.so.1*
-# There may be a workaround (so that we can find and install from the /opt/SUNWspro/lib locactions), but I'm not aware of any at the moment.
-
-  FIND_PATH(SUN_STLPORT4_SO_LIB_DIR libstlport.so /opt/SUNWspro/lib/stlport4)
-  FIND_PATH(SUN_STLPORT4_SO_LIB_DIR_64 libstlport.so /opt/SUNWspro/lib/stlport4/amd64)
-  FIND_PATH(SUN_STLPORT4_SO_1_LIB_DIR libstlport.so.1 /opt/SUNWspro/prod/lib/stlport4)
-  FIND_PATH(SUN_STLPORT4_SO_1_LIB_DIR_64 libstlport.so.1 /opt/SUNWspro/prod/lib/stlport4/amd64)
 
 # Let's check if we're okay
 
   message(STATUS "CURL_DIR is ${CURL_DIR}")
-  message(STATUS "SFW_LIB_DIR is ${SFW_LIB_DIR}")
-
-  FIND_FILE(CURL_LIB libslicerlibcurl.so PATHS ${CURL_DIR})
+  message(STATUS "SUN_CC_LIB_DIR is ${SUN_CC_LIB_DIR}")
+  message(STATUS "SUN_CC_LIB_DIR_64 is ${SUN_CC_LIB_DIR_64}")
 
 # Bellow we'll find the libraries for various compilers, and their 64 bit versions too.
-# Remark: since the whole toolchain should be compiled with the stlport4 library (with Sun's compilers), Crun and Cstd are here only for convernience.
+# Remark: since the whole toolchain should be compiled with the Apache stdcxx4 library (with Sun's compilers), Crun and Cstd are here only for convenience.
+# Possible FIXME:
+# This might look ugly here - since CPACK puts the softlink itself into the install dir, and on Solaris we have both libstdcxx4.so and libstdcxx4.so.4 
+# as softlinks to libstdcxx4.so.4.2.1, we have to feed more directories into CPACK to find and package all of them.
+# Like:
+# /usr/lib/amd64/libstdcxx4.so -> libstdcxx4.so.4.2.1
+# /usr/lib/amd64/libstdcxx4.so.4 -> libstdcxx4.so.4.2.1
+# /usr/lib/amd64/libstdcxx4.so.4.2.1
+# /usr/lib/libstdcxx4.so -> libstdcxx4.so.4.2.1
+# /usr/lib/libstdcxx4.so.4 -> libstdcxx4.so.4.2.1
+# /usr/lib/libstdcxx4.so.4.2.1
+# There may be a workaround, but I'm not aware of any at the moment. :)
 
-  FIND_FILE(GNUSTDCXX1 libstdc++.so PATHS ${SFW_LIB_DIR})
-  FIND_FILE(GNUSTDCXX2 libstdc++.so.6 PATHS ${SFW_LIB_DIR})
-  FIND_FILE(GNUSTDCXX3 libstdc++.so.6.0.3 PATHS ${SFW_LIB_DIR})
-  FIND_FILE(LIBGCC1 libgcc_s.so libgcc_s.so.1 PATHS ${SFW_LIB_DIR})
-  FIND_FILE(LIBGCC2 libgcc_s.so.1 PATHS ${SFW_LIB_DIR})
+  FIND_FILE(CURL_LIB libslicerlibcurl.so PATHS ${CURL_DIR})
   FIND_FILE(LIBCRUN libCrun.so.1 PATHS ${SUN_CC_LIB_DIR})
   FIND_FILE(LIBCSTD libCstd.so.1 PATHS ${SUN_CC_LIB_DIR})
-  FIND_FILE(STLPORT4_SO_32 libstlport.so  PATHS ${SUN_STLPORT4_SO_LIB_DIR})
-  FIND_FILE(STLPORT4_SO_1_32 libstlport.so.1  PATHS ${SUN_STLPORT4_SO_1_LIB_DIR})
+  FIND_FILE(STDCXX_LIB_DIR_SO_32 libstdcxx4.so  PATHS ${SUN_CC_LIB_DIR})
+  FIND_FILE(STDCXX_LIB_DIR_SO_32_4 libstdcxx4.so.4  PATHS ${SUN_CC_LIB_DIR})
+  FIND_FILE(STDCXX_LIB_DIR_SO_32_4_2_1 libstdcxx4.so.4.2.1  PATHS ${SUN_CC_LIB_DIR})
 
-# These are the 64 bit counterparts of the above libraries.
+# These are the 64 bit counterparts of the above libraries (except CURL_LIB).
 
-  FIND_FILE(GNUSTDCXX_64_1 libstdc++.so PATHS ${SFW_LIB_DIR_64})
-  FIND_FILE(GNUSTDCXX_64_2 libstdc++.so.6 PATHS ${SFW_LIB_DIR_64})
-  FIND_FILE(GNUSTDCXX_64_3 libstdc++.so.6.0.3 PATHS ${SFW_LIB_DIR_64})
-  FIND_FILE(LIBGCC_64_1 libgcc_s.so libgcc_s.so.1 PATHS ${SFW_LIB_DIR_64})
-  FIND_FILE(LIBGCC_64_2 libgcc_s.so.1 PATHS ${SFW_LIB_DIR_64})
   FIND_FILE(LIBCRUN_64 libCrun.so.1 PATHS ${SUN_CC_LIB_DIR_64})
   FIND_FILE(LIBCSTD_64 libCstd.so.1 PATHS ${SUN_CC_LIB_DIR_64})
-  FIND_FILE(STLPORT4_SO_64 libstlport.so  PATHS ${SUN_STLPORT4_SO_LIB_DIR_64})
-  FIND_FILE(STLPORT4_SO_1_64 libstlport.so.1  PATHS ${SUN_STLPORT4_SO_1_LIB_DIR_64})
+  FIND_FILE(STDCXX_LIB_DIR_SO_64 libstdcxx4.so  PATHS ${SUN_CC_LIB_DIR_64})
+  FIND_FILE(STDCXX_LIB_DIR_SO_64_4 libstdcxx4.so.4  PATHS ${SUN_CC_LIB_DIR_64})
+  FIND_FILE(STDCXX_LIB_DIR_SO_64_4_2_1 libstdcxx4.so.4.2.1  PATHS ${SUN_CC_LIB_DIR_64})
 
 # Let's check these...
 
- message(STATUS "CURL_LIB is ${CURL_LIB} GNUSTDCXX1 is ${GNUSTDCXX1} GNUSTDCXX2 is ${GNUSTDCXX2} GNUSTDCXX3 is ${GNUSTDCXX3} LIBGCC1 is ${LIBGCC1}  LIBGCC2 is ${LIBGCC2} LIBCRUN is ${LIBCRUN} LIBCSTD is ${LIBCSTD} STLPORT4_SO_32 is ${STLPORT4_SO_32} STLPORT4_SO_1_32 is ${STLPORT4_SO_1_32}")
- message (STATUS " These are the 64 bit libs: GNUSTDCXX_64_1 is ${GNUSTDCXX_64_1} GNUSTDCXX_64_2 is ${GNUSTDCXX_64_2} GNUSTDCXX_64_3 is ${GNUSTDCXX_64_3} LIBGCC_64_1 is ${LIBGCC_64_1}  LIBGCC_64_2 is ${LIBGCC_64_2}  LIBCRUN_64 is ${LIBCRUN_64} LIBCSTD_64 is ${LIBCSTD_64} STLPORT4_SO_64 is ${STLPORT4_SO_64} STLPORT4_SO_1_64 is ${STLPORT4_SO_1_64}")
+ message(STATUS "CURL_LIB is ${CURL_LIB} ")
+ message(STATUS "These are the 32 bit libs (for convenience): \n LIBCRUN is ${LIBCRUN} \n LIBCSTD is ${LIBCSTD} \n STDCXX_LIB_DIR_SO_32 is ${STDCXX_LIB_DIR_SO_32} \n STDCXX_LIB_DIR_SO_32_4 is ${STDCXX_LIB_DIR_SO_32_4} \n STDCXX_LIB_DIR_SO_32_4_2_1 is ${STDCXX_LIB_DIR_SO_32_4_2_1}")
+ message (STATUS " These are the 64 bit libs:\n LIBCRUN_64 is ${LIBCRUN_64} \n LIBCSTD_64 is ${LIBCSTD_64} \n STDCXX_LIB_DIR_SO_64 is ${STDCXX_LIB_DIR_SO_64} \n STDCXX_LIB_DIR_SO_64_4 is ${STDCXX_LIB_DIR_SO_64_4} \n STDCXX_LIB_DIR_SO_64_4_2_1 is ${STDCXX_LIB_DIR_SO_64_4_2_1}")
 # Let's install them.
 
   INSTALL(FILES
@@ -102,14 +98,16 @@ if(CMAKE_SYSTEM MATCHES "SunOS.*")
       DESTINATION lib/Slicer3
       )      
   INSTALL(FILES
-      ${GNUSTDCXX1} ${GNUSTDCXX2} ${GNUSTDCXX3} ${LIBGCC1} ${LIBGCC2} ${LIBCRUN} ${LIBCSTD} ${STLPORT4_SO_32} ${STLPORT4_SO_1_32}
+      ${LIBCRUN} ${LIBCSTD} ${STDCXX_LIB_DIR_SO_32} ${STDCXX_LIB_DIR_SO_32_4} ${STDCXX_LIB_DIR_SO_32_4_2_1}
       DESTINATION lib/Slicer3/CompilerLibs/32
       ) 
   INSTALL(FILES
-      ${GNUSTDCXX_64_1} ${GNUSTDCXX_64_2} ${GNUSTDCXX_64_3} ${LIBGCC_64_1} ${LIBGCC_64_2} ${LIBCRUN} ${LIBCSTD} ${STLPORT4_SO_64} ${STLPORT4_SO_1_64}
+      ${LIBCRUN_64} ${LIBCSTD_64} ${STDCXX_LIB_DIR_SO_64} ${STDCXX_LIB_DIR_SO_64_4} ${STDCXX_LIB_DIR_SO_64_4_2_1}
       DESTINATION lib/Slicer3/CompilerLibs/64
       ) 
 endif(CMAKE_SYSTEM MATCHES "SunOS.*")
+
+# SOLARIS section end
 
 # -------------------------------------------------------------------------
 # Find and install python

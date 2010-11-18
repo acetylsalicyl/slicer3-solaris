@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLModelHierarchyNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLModelHierarchyNode > node1 = vtkSmartPointer< vtkMRMLModelHierarchyNode >::New();
-
+   typedef  vtkMRMLModelHierarchyNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

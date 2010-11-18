@@ -91,7 +91,7 @@ if(Slicer3_USE_OPENIGTLINK)
     ${modules}
     OpenIGTLinkIF
     NeuroNav
-    ProstateNav
+#    ProstateNav
     # IGTNavigation
     # OpenCV
     )

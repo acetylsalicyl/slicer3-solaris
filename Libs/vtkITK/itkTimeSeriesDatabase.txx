@@ -11,6 +11,7 @@
 #include "itkArchetypeSeriesFileNames.h"
 #include <fstream>
 #include <vector>
+#include <math.h>
 
 namespace itk {
 

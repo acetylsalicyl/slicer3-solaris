@@ -40,9 +40,10 @@ public:
 };
  
 int vtkMRMLVolumeNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLVolumeNodeTestHelper1 > node1 = vtkSmartPointer< vtkMRMLVolumeNodeTestHelper1 >::New();
-
+   typedef  vtkMRMLVolumeNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

@@ -47,6 +47,7 @@
 
 #include "itkPluginUtilities.h"
 #include "MRIBiasFieldCorrectionCLP.h"
+#include <math.h>
 
 #define MRIBiasFieldCorrection_DebugMacro(msg) std::cout << __LINE__ \
   << " MRIBiasFieldCorrection " << msg << std::endl;

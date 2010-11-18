@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLDiffusionWeightedVolumeDisplayNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLDiffusionWeightedVolumeDisplayNode > node1 = vtkSmartPointer< vtkMRMLDiffusionWeightedVolumeDisplayNode >::New();
-
+   typedef  vtkMRMLDiffusionWeightedVolumeDisplayNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

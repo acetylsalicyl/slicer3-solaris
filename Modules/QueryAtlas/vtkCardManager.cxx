@@ -30,6 +30,7 @@ Authors: Michael McKenna, David Small, Steve Pieper.
 
 #include "vtkCardManager.h"
 #include "vtkCard.h"
+#include <math.h>
 
 
 vtkCxxRevisionMacro(vtkCardManager, "$Revision: 1.4 $");

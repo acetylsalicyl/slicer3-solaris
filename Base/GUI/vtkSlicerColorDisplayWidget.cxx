@@ -29,6 +29,7 @@
 #include "vtkKWScalarBarAnnotation.h"
 #include "vtkSlicerViewerWidget.h"
 #include "vtkSlicerPopUpHelpWidget.h"
+#include <math.h>
 
 //---------------------------------------------------------------------------
 vtkStandardNewMacro (vtkSlicerColorDisplayWidget );

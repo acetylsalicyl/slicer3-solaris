@@ -40,6 +40,7 @@ Version:   $Revision$
 #include "gdcmGlobal.h"         /// access to dictionary
 
 #include "vtkITK.h"
+#include <math.h>
 
 class VTK_ITK_EXPORT vtkITKArchetypeImageSeriesReader : public vtkImageSource
 {

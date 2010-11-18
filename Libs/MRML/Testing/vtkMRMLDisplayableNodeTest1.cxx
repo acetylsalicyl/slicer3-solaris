@@ -43,9 +43,10 @@ public:
 };
  
 int vtkMRMLDisplayableNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLDisplayableNodeTestHelper1 > node1 = vtkSmartPointer< vtkMRMLDisplayableNodeTestHelper1 >::New();
-
+   typedef  vtkMRMLDisplayableNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   return EXIT_SUCCESS;

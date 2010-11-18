@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLCameraNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLCameraNode > node1 = vtkSmartPointer< vtkMRMLCameraNode >::New();
-
+   typedef vtkMRMLCameraNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

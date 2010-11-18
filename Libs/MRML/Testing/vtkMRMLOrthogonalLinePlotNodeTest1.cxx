@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLOrthogonalLinePlotNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLOrthogonalLinePlotNode > node1 = vtkSmartPointer< vtkMRMLOrthogonalLinePlotNode >::New();
-
+   typedef vtkMRMLOrthogonalLinePlotNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

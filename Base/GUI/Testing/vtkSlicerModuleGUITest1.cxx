@@ -24,7 +24,7 @@
 int vtkSlicerModuleGUITest1(int vtkNotUsed(argc), char * vtkNotUsed(argv) [] )
 {
   vtkSlicerModuleGUI* moduleGUI = vtkSlicerModuleGUI::New();
-
+   typedef vtkSlicerModuleGUI  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( moduleGUI );
   
   TEST_SET_GET_STRING(moduleGUI, Category);

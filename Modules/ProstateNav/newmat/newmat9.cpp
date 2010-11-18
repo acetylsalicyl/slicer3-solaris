@@ -10,6 +10,7 @@
 #include "newmat.h"
 #include "newmatio.h"
 #include "newmatrc.h"
+#include <complex>
 
 #ifdef use_namespace
 namespace NEWMAT {

@@ -36,9 +36,10 @@ public:
 };
  
 int vtkMRMLNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLNodeTestHelper1 > node1 = vtkSmartPointer< vtkMRMLNodeTestHelper1 >::New();
-
+   typedef vtkMRMLNode  Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();

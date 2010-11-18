@@ -18,9 +18,10 @@
 #include "TestingMacros.h"
 
 int vtkMRMLDiffusionTensorVolumeNodeTest1(int , char * [] )
+
 {
   vtkSmartPointer< vtkMRMLDiffusionTensorVolumeNode > node1 = vtkSmartPointer< vtkMRMLDiffusionTensorVolumeNode >::New();
-
+   typedef  vtkMRMLDiffusionTensorVolumeNode Superclass, MySuperclass;
   EXERCISE_BASIC_OBJECT_METHODS( node1 );
 
   node1->UpdateReferences();
